@@ -7,9 +7,11 @@ updateGrid()
 function createDiv(size) {
     const container = document.querySelector(".container");
     container.innerHTML = " ";
+    const flexBasis = 100/size;
     let gridSize = size * size;
     for (let i= 0; i< gridSize; i++) {
         const newDiv = document.createElement("div");
+        newDiv.style.flexBasis = `${flexBasis}%`;
         container.appendChild(newDiv);
     }
     changeDivColor();
