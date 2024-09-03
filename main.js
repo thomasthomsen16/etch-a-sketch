@@ -29,8 +29,18 @@ function changeDivColor() {
 function updateGrid() {
     const btn = document.querySelector("button");
     btn.addEventListener("click", () => {
-        let newSize = Number(prompt("Type the number of squares pr. side"));
-        createDiv(newSize);
+
+        let newSize = Number(prompt("Type the number of squares pr. side. It should be less than 100"));
+        if (newSize < 100) {
+            if (!isNaN(newSize) && newSize > 0) {
+                createDiv(newSize);
+            } else {
+                alert("Please select a valid number. It must be greater than 0");
+            } 
+        } else {
+            alert("Please select a number less than 100");
+        }
+
     })
     
 }
