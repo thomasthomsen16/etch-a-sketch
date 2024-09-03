@@ -1,11 +1,13 @@
 // Creates div for grid
 
 function createDiv() {
-    for (let i= 0; i< 256; i++) {
+    for (let i= 0; i< 256-1; i++) {
         const newDiv = document.createElement("div");
         const div = document.querySelector(".container");
         div.appendChild(newDiv);
+        console.log(document.querySelectorAll(".container div").length)
     }
+    changeDivColor();
 }
 function changeDivColor() {
     // Iterates of all divs and add eventlistener for mouseover
@@ -18,4 +20,3 @@ function changeDivColor() {
 }
 
 createDiv();
-changeDivColor();
