@@ -1,5 +1,6 @@
-// Creates div for grid
 
+
+// Creates div for grid
 function createDiv() {
     for (let i= 0; i< 256-1; i++) {
         const newDiv = document.createElement("div");
@@ -19,4 +20,13 @@ function changeDivColor() {
     })
 }
 
+function updateGrid() {
+    const btn = document.querySelector("button");
+    btn.addEventListener("click", () => {
+        prompt("Type the number of squares pr. side");
+    })
+}
+
+
 createDiv();
+updateGrid()
