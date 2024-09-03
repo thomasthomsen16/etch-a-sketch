@@ -1,0 +1,11 @@
+.container > div {
+    border: 1px solid black;
+    flex-basis: 6.25%;
+    padding-bottom: 6.25%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
