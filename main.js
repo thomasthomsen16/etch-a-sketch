@@ -1,12 +1,16 @@
+let size = 16;
 
+createDiv(size);
+updateGrid()
 
 // Creates div for grid
-function createDiv() {
-    for (let i= 0; i< 256-1; i++) {
+function createDiv(size) {
+    const container = document.querySelector(".container");
+    container.innerHTML = " ";
+    let gridSize = size * size;
+    for (let i= 0; i< gridSize; i++) {
         const newDiv = document.createElement("div");
-        const div = document.querySelector(".container");
-        div.appendChild(newDiv);
-        console.log(document.querySelectorAll(".container div").length)
+        container.appendChild(newDiv);
     }
     changeDivColor();
 }
@@ -23,10 +27,10 @@ function changeDivColor() {
 function updateGrid() {
     const btn = document.querySelector("button");
     btn.addEventListener("click", () => {
-        prompt("Type the number of squares pr. side");
+        let newSize = Number(prompt("Type the number of squares pr. side"));
+        createDiv(newSize);
     })
+    
 }
 
 
-createDiv();
-updateGrid()
